@@ -1,25 +1,25 @@
 package jana60.bank;
 
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
     	
-    	Scanner sc = new Scanner(System.in);
+    	Conto c = new Conto(12345678, "Rocco");
+    	System.out.println(c);
+    	System.out.println("--------------------");
     	
-    	System.out.print("Inserisci nome proprietario del conto: ");
-    	String nomeProprietario = sc.nextLine();
+    	c.addMoney(100);
+    	System.out.println(c);
+    	System.out.println("--------------------");
     	
-    	System.out.print("Inserisci numero conto: ");
-    	int numeroConto = sc.nextInt();
+    	boolean risultatoPrelievo = c.getMoney(50);
+    	System.out.println("Esito prelievo: " + risultatoPrelievo);
+    	System.out.println(c);
+    	System.out.println("--------------------");
     	
-    	System.out.print("Quanto vuole versare? ");
-    	int versamento = sc.nextInt();
-    	
-    	System.out.print("Quanto vuole prelevare? ");
-    	int prelievo = sc.nextInt();
-    	
-    	Conto c = new Conto(numeroConto, nomeProprietario, versamento, prelievo);
+    	risultatoPrelievo = c.getMoney(60);
+    	System.out.println("Esito prelievo: " + risultatoPrelievo);
     	System.out.println(c);
 	}
 }
